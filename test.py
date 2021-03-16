@@ -1,9 +1,14 @@
 import requests
 import json
+import os
+
 
 url = "https://kakaoi-newtone-openapi.kakao.com/v1/recognize"
 
-rest_api_key = '484f69c2137f8b747001f5e17af5f256'
+file_path = 'C:/Jeonbar2/git_workspace/Capstone_Test/secret.json'
+with open(file_path) as f:
+    json_key = json.load(f)
+rest_api_key = json_key['rest_api_key']
 
 headers = {
     "Content-Type": "application/octet-stream",
